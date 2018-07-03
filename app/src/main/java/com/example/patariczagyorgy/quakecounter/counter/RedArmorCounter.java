@@ -8,7 +8,7 @@ import java.util.Locale;
 public class RedArmorCounter {
 
   private boolean redTimerRunning;
-  private long redArmorMilisec = 27000;
+  private long redArmorMilisec = 26999;
   private TextView redArmorTime;
   private CountDownTimer redCountDownTimer;
 
@@ -34,7 +34,6 @@ public class RedArmorCounter {
 
       @Override
       public void onFinish() {
-       redArmorTime.setText("00:25");
        this.start();
       }
     }.start();
