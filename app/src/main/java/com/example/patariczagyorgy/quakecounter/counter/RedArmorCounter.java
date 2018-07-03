@@ -3,10 +3,12 @@ package com.example.patariczagyorgy.quakecounter.counter;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class RedArmorCounter {
 
   private boolean redTimerRunning;
-  private long redArmorMilisec = 25000;
+  private long redArmorMilisec = 27000;
   private TextView redArmorTime;
   private CountDownTimer redCountDownTimer;
 
@@ -32,25 +34,19 @@ public class RedArmorCounter {
 
       @Override
       public void onFinish() {
-
+       redArmorTime.setText("00:25");
+       this.start();
       }
     }.start();
 
     redTimerRunning = true;
   }
 
-  private void upDateRedTime() {
-    int minutes = (int) redArmorMilisec / 60000;
-    int seconds = (int) redArmorMilisec % 60000 / 1000;
+  public void upDateRedTime() {
+    int minutes = (int) (redArmorMilisec / 1000) / 60;
+    int seconds = (int) (redArmorMilisec / 1000) % 60;
 
-    String redTimer;
-
-    redTimer = "" + minutes;
-    redTimer += ":";
-    if(seconds < 10) {
-      redTimer +="0";
-    }
-    redTimer += seconds;
+    String redTimer = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds-1);
 
     redArmorTime.setText(redTimer);
   }
