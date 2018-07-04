@@ -7,8 +7,10 @@ import java.util.Locale;
 
 public class RedArmorCounter {
 
+  private static final long RED_ARMOR_MILISEC = 26999;
+
   private boolean redTimerRunning;
-  private long redArmorMilisec = 26999;
+  private long redArmorMilisec = RED_ARMOR_MILISEC;
   private TextView redArmorTime;
   private CountDownTimer redCountDownTimer;
 
@@ -52,6 +54,8 @@ public class RedArmorCounter {
 
   private void stopRedTimer() {
     redCountDownTimer.cancel();
+    redArmorMilisec = RED_ARMOR_MILISEC;
+    upDateRedTime();
     redTimerRunning = false;
   }
 }

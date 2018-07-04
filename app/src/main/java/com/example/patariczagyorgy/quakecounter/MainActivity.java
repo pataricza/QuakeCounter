@@ -14,6 +14,9 @@ import com.example.patariczagyorgy.quakecounter.counter.RedArmorCounter;
 
 public class MainActivity extends Activity {
 
+  private static final String RESET_TIMERS = "Reset Timers";
+  private static final String START_MATCH = "Start Match";
+
   private TextView quadDamageTime;
   private QuadDamageCounter quadDamageCounter;
   private Button pickedUpQuadDamage;
@@ -50,6 +53,14 @@ public class MainActivity extends Activity {
     startMatch.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        CharSequence actualText = startMatch.getText();
+
+        if(actualText.equals(START_MATCH)) {
+          startMatch.setText(RESET_TIMERS);
+        } else {
+          startMatch.setText(START_MATCH);
+        }
+
         redArmorCounter.startMatchTimer();
         megaHealthCounter.startMatchTimer();
       }

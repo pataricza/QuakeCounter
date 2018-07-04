@@ -7,8 +7,10 @@ import java.util.Locale;
 
 public class MegaHealthCounter {
 
+    private static final long MEGA_HEALTH_MILISEC = 36999;
+
     private boolean megaTimerRunning;
-    private long megaHealthMilisec = 36999;
+    private long megaHealthMilisec = MEGA_HEALTH_MILISEC;
     private TextView megaHealthTime;
     private CountDownTimer megaCountDownTimer;
 
@@ -52,6 +54,8 @@ public class MegaHealthCounter {
 
     private void stopMegaTimer() {
         megaCountDownTimer.cancel();
+        megaHealthMilisec = MEGA_HEALTH_MILISEC;
+        upDateMegaTime();
         megaTimerRunning = false;
     }
 }
