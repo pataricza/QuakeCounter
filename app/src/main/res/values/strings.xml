@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">QuakeCounter</string>
     <string name="start_match">Start Match</string>
-    <string name="red_armor">Picked Up Item</string>
+    <string name="reset_counter">Picked Up Item</string>
     <string name="red_armor_counter">00:25</string>
+    <string name="mega_health_counter">00:35</string>
+    <string name="quad_damage_counter">00:45</string>
+    <string name="red_armor">Red Armor</string>
+    <string name="mega_health">Mega Health</string>
+    <string name="quad_damage">Quad Damage</string>
 </resources>
