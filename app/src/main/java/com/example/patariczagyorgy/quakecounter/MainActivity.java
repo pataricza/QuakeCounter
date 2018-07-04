@@ -8,9 +8,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.patariczagyorgy.quakecounter.counter.MegaHealthCounter;
+import com.example.patariczagyorgy.quakecounter.counter.QuadDamageCounter;
 import com.example.patariczagyorgy.quakecounter.counter.RedArmorCounter;
 
 public class MainActivity extends Activity {
+
+  private TextView quadDamageTime;
+  private QuadDamageCounter quadDamageCounter;
+  private Button pickedUpQuadDamage;
+
+  private TextView megaHealthTime;
+  private MegaHealthCounter megaHealthCounter;
+  private Button pickedUpMegaHealth;
 
   private TextView redArmorTime;
   private RedArmorCounter redArmorCounter;
@@ -22,6 +32,14 @@ public class MainActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    quadDamageTime = findViewById(R.id.quadDamageTime);
+    quadDamageCounter = new QuadDamageCounter(quadDamageTime);
+    pickedUpQuadDamage = findViewById(R.id.pickedUpQuadDamage);
+
+    megaHealthTime = findViewById(R.id.megaHealthTime);
+    megaHealthCounter = new MegaHealthCounter(megaHealthTime);
+    pickedUpMegaHealth = findViewById(R.id.pickedUpMegaHealth);
 
     redArmorTime = findViewById(R.id.redArmorTime);
     redArmorCounter = new RedArmorCounter(redArmorTime);
